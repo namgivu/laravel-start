@@ -4,3 +4,8 @@
 Homestead.yaml
 Homestead.json
 .env
+
+.idea/dictionaries/*
+.idea/deployment.xml
+.idea/php.xml
+.idea/laravel-start.iml
