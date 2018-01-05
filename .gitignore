@@ -1,3 +1,5 @@
 vendor/
+
 .idea/laravel-sfs.iml
 .idea/modules.xml
+.idea/deployment.xml

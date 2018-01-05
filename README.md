@@ -6,4 +6,8 @@ CODE="$HOME/NN/code/_NN_/laravel-sfs"
 cp -r "$t/." "$CODE"
 
 cd "$CODE"
+
+: #database prep
+php artisan make:migration create_tasks_table --create=tasks
+
 ```
