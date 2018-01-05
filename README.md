@@ -20,7 +20,9 @@ vagrant up
 vagrant ssh #get inside vagrant machine aka @homestead
 php artisan migrate # @homestead
 
-: # @homestead check database with dbHost=Homestead.yaml[id] 
-  #                                dbConn=.env[dbName, dbUser, dbPassword] 
+# @homestead check database with dbHost=Homestead.yaml[id] 
+#                                dbConn=.env[dbName, dbUser, dbPassword] 
+
+php artisan make:model Task #generate model via Eloquent aka. Laravel ORM
 
 ```
