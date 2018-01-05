@@ -12,6 +12,7 @@ HOMESTEAD_VERSION='6.6.0' &&\
   composer require laravel/homestead ^${HOMESTEAD_VERSION} --dev &&\
   php vendor/bin/homestead make
   
+  
 : #database prep
 cd "$CODE"
 php artisan make:migration create_tasks_table --create=tasks
@@ -24,5 +25,9 @@ php artisan migrate # @homestead
 #                                dbConn=.env[dbName, dbUser, dbPassword] 
 
 php artisan make:model Task #generate model via Eloquent aka. Laravel ORM
+
+
+: #follow the guide to create task's CRUD at /tasks
+: #TODO break down above work via /breakdown-tasks
 
 ```
