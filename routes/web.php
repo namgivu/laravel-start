@@ -14,12 +14,13 @@
 use App\Task;
 use Illuminate\Http\Request;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-//region /task handlers
+//region /tasks handlers
 
 /*
  * read GET /tasks
@@ -64,4 +65,12 @@ Route::delete('/tasks/{id}', function ($id) {
     return redirect('/tasks');
 });
 
-//endregion /task handlers
+//endregion /tasks handlers
+
+
+//region /breakdown-tasks handlers
+Route::get('/breakdown-tasks', function (Request $request) {
+    $tasks = Task::orderBy('created_at', 'asc')->get();
+    return view('breakdown-tasks', ['tasks' => $tasks]);
+});
+//endregion /breakdown-tasks handlers
