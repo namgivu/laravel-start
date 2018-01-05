@@ -69,8 +69,33 @@ Route::delete('/tasks/{id}', function ($id) {
 
 
 //region /breakdown-tasks handlers
+/*
+ * GET /breakdown-tasks
+ */
 Route::get('/breakdown-tasks', function (Request $request) {
     $tasks = Task::orderBy('created_at', 'asc')->get();
     return view('breakdown-tasks', ['tasks' => $tasks]);
+});
+
+/*
+ * POST /breakdown-tasks
+ */
+Route::post('/breakdown-tasks', function (Request $request) {
+    //params validation
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|max:255',
+    ]);
+    if ($validator->fails()) {
+        return redirect('/breakdown-tasks')
+            ->withInput()
+            ->withErrors($validator);
+    }
+
+    //create The Task
+    $task = new Task;
+    $task->name = $request->name;
+    $task->save();
+
+    return redirect('/breakdown-tasks');
 });
 //endregion /breakdown-tasks handlers
