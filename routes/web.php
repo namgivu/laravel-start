@@ -69,6 +69,7 @@ Route::delete('/tasks/{id}', function ($id) {
 
 
 //region /breakdown-tasks handlers
+
 /*
  * GET /breakdown-tasks
  */
@@ -76,6 +77,7 @@ Route::get('/breakdown-tasks', function (Request $request) {
     $tasks = Task::orderBy('created_at', 'asc')->get();
     return view('breakdown-tasks', ['tasks' => $tasks]);
 });
+
 
 /*
  * POST /breakdown-tasks
@@ -98,4 +100,14 @@ Route::post('/breakdown-tasks', function (Request $request) {
 
     return redirect('/breakdown-tasks');
 });
+
+
+/*
+ * DELETE /breakdown-tasks/{id}
+ */
+Route::delete('/breakdown-tasks/{id}', function ($id) {
+    Task::findOrFail($id)->delete();
+    return redirect('/breakdown-tasks');
+});
+
 //endregion /breakdown-tasks handlers
