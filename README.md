@@ -15,6 +15,12 @@ HOMESTEAD_VERSION='6.6.0' &&\
 : #database prep
 cd "$CODE"
 php artisan make:migration create_tasks_table --create=tasks
+
 vagrant up
+vagrant ssh #get inside vagrant machine aka @homestead
+php artisan migrate # @homestead
+
+: # @homestead check database with dbHost=Homestead.yaml[id] 
+  #                                dbConn=.env[dbName, dbUser, dbPassword] 
 
 ```

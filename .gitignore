@@ -3,3 +3,6 @@ vendor/
 .idea/laravel-sfs.iml
 .idea/modules.xml
 .idea/deployment.xml
+.idea/dataSources.xml
+.idea/dataSources/
+.idea/dictionaries/
