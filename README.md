@@ -32,6 +32,9 @@ php artisan make:model Task #generate model via Eloquent aka. Laravel ORM
 : #follow the guide to create task's CRUD at /tasks
 : #break down above work via /breakdown-tasks
 
+php artisan make:auth #generate email+pass auth
+
+
 ```
 
 
@@ -40,7 +43,15 @@ php artisan make:model Task #generate model via Eloquent aka. Laravel ORM
 composer install
 vagrant up
 vagrant provision
+
+vagrant ssh; #then 
+  php artisan migrate
+
 ```
+
+- about csrf-xxx
+  > Cross-Site Request Forgery (CSRF) is an attack that forces an end user 
+    to execute unwanted actions on a web application in which they're currently authenticated. 
 
 - TODO how to debug such laravel vagrant web app?
 - TODO some syntax still marked as unresolved in PhpStorm e.g. Route::xxx, Validator::xxx
