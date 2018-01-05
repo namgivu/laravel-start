@@ -15,10 +15,21 @@ use App\Task;
 use Illuminate\Http\Request;
 
 
+//region auth
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return redirect('/home');
 });
 
+//endregion auth
+
+
+////region Tasks
 
 //region /tasks handlers
 
@@ -111,3 +122,5 @@ Route::delete('/breakdown-tasks/{id}', function ($id) {
 });
 
 //endregion /breakdown-tasks handlers
+
+////endregion Tasks
