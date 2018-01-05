@@ -43,3 +43,5 @@ vagrant provision
 ```
 
 - TODO how to debug such laravel vagrant web app?
+- TODO some syntax still marked as unresolved in PhpStorm e.g. Route::xxx, Validator::xxx
+       we need PhpStorm understand a laravel project 
