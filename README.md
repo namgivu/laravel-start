@@ -15,5 +15,6 @@ HOMESTEAD_VERSION='6.6.0' &&\
 : #database prep
 cd "$CODE"
 php artisan make:migration create_tasks_table --create=tasks
+vagrant up
 
 ```
