@@ -1,5 +1,7 @@
 ```bash
 
+: #ide deps PhpStorm, its plugin Laravel-xxx
+
 : #app skeleton
 t=$(mktemp -d) #create temp folder ref. https://stackoverflow.com/a/21564182/248616
 composer create-project laravel/laravel "$t" --prefer-dist
@@ -28,6 +30,16 @@ php artisan make:model Task #generate model via Eloquent aka. Laravel ORM
 
 
 : #follow the guide to create task's CRUD at /tasks
-: #TODO break down above work via /breakdown-tasks
+: #break down above work via /breakdown-tasks
 
 ```
+
+
+- often-used commands
+```bash
+composer install
+vagrant up
+vagrant provision
+```
+
+- TODO how to debug such laravel vagrant web app?
