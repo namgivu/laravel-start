@@ -16,18 +16,16 @@ use App\BasicTask;
 use Illuminate\Http\Request;
 
 
-//region auth
-
-Auth::routes();
-
+//home
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/', function () {
     //return view('welcome');
     return redirect('/home');
 });
 
-//endregion auth
+
+//auth
+Auth::routes();
 
 
 ////region Basic Tasks
