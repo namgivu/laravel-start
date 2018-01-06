@@ -9,7 +9,7 @@
         @include('common.errors')
 
         <!-- New Task Form -->
-        <form action="/breakdown-tasks" method="POST" class="form-horizontal">
+        <form action="/basic-tasks" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             <!-- Task Name -->
@@ -34,7 +34,7 @@
 
     </div>
 
-    <!-- Current Tasks Listing -->
+    <!-- Current Tasks -->
     @if (count($tasks) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -61,7 +61,7 @@
 
                             <!-- Delete Button -->
                             <td>
-                                <form action="/breakdown-tasks/{{ $task->id }}" method="POST">
+                                <form action="/basic-tasks/{{ $task->id }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
                                     <button>Delete Task</button>

@@ -12,6 +12,7 @@
 */
 
 use App\Task;
+use App\BasicTask;
 use Illuminate\Http\Request;
 
 
@@ -29,54 +30,53 @@ Route::get('/', function () {
 //endregion auth
 
 
-////region Tasks
+////region Basic Tasks
 
-//region /tasks handlers
+//region /basic-tasks handlers
 
 /*
- * read GET /tasks
+ * read GET /basic-tasks
  */
-Route::get('/tasks', function (Request $request) {
-    $tasks = Task::orderBy('created_at', 'asc')->get();
-    return view('tasks', [
+Route::get('/basic-tasks', function (Request $request) {
+    $tasks = BasicTask::orderBy('created_at', 'asc')->get();
+    return view('basic-tasks.tasks', [
         'tasks' => $tasks
     ]);
 });
 
 
 /*
- * create POST /tasks
+ * create POST /basic-tasks
  */
-Route::post('/tasks', function (Request $request) {
+Route::post('/basic-tasks', function (Request $request) {
     //params validation
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
     ]);
     if ($validator->fails()) {
-        return redirect('/tasks')
+        return redirect('/basic-tasks')
             ->withInput()
             ->withErrors($validator);
     }
 
     //create The Task
-    $task = new Task;
+    $task = new BasicTask;
     $task->name = $request->name;
     $task->save();
 
-    return redirect('/tasks');
+    return redirect('/basic-tasks');
 });
 
 
 /*
- * delete DELETE /tasks/{id}
+ * delete DELETE /basic-tasks/{id}
  */
-Route::delete('/tasks/{id}', function ($id) {
-    Task::findOrFail($id)->delete();
-
-    return redirect('/tasks');
+Route::delete('/basic-tasks/{id}', function ($id) {
+    BasicTask::findOrFail($id)->delete();
+    return redirect('/basic-tasks');
 });
 
-//endregion /tasks handlers
+//endregion /basic-tasks handlers
 
 
 //region /breakdown-tasks handlers
@@ -84,43 +84,45 @@ Route::delete('/tasks/{id}', function ($id) {
 /*
  * GET /breakdown-tasks
  */
-Route::get('/breakdown-tasks', function (Request $request) {
-    $tasks = Task::orderBy('created_at', 'asc')->get();
-    return view('breakdown-tasks', ['tasks' => $tasks]);
+Route::get('/basic-tasks-breakdown', function (Request $request) {
+    $tasks = BasicTask::orderBy('created_at', 'asc')->get();
+    return view('basic-tasks.breakdown-tasks', [
+        'tasks' => $tasks
+    ]);
 });
 
 
 /*
- * POST /breakdown-tasks
+ * POST /basic-tasks-breakdown
  */
-Route::post('/breakdown-tasks', function (Request $request) {
+Route::post('/basic-tasks-breakdown', function (Request $request) {
     //params validation
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
     ]);
     if ($validator->fails()) {
-        return redirect('/breakdown-tasks')
+        return redirect('/basic-tasks-breakdown')
             ->withInput()
             ->withErrors($validator);
     }
 
     //create The Task
-    $task = new Task;
+    $task = new BasicTask;
     $task->name = $request->name;
     $task->save();
 
-    return redirect('/breakdown-tasks');
+    return redirect('/basic-tasks-breakdown');
 });
 
 
 /*
- * DELETE /breakdown-tasks/{id}
+ * DELETE /basic-tasks-breakdown/{id}
  */
-Route::delete('/breakdown-tasks/{id}', function ($id) {
-    Task::findOrFail($id)->delete();
-    return redirect('/breakdown-tasks');
+Route::delete('/basic-tasks-breakdown/{id}', function ($id) {
+    BasicTask::findOrFail($id)->delete();
+    return redirect('/basic-tasks-breakdown');
 });
 
-//endregion /breakdown-tasks handlers
+//endregion /basic-tasks-breakdown handlers
 
 ////endregion Tasks
