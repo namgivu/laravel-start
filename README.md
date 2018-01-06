@@ -21,7 +21,7 @@ php artisan make:migration create_tasks_table --create=tasks
 
 vagrant up
 vagrant ssh #get inside vagrant machine aka @homestead
-php artisan migrate # @homestead
+    php artisan migrate # @homestead
 
 # @homestead check database with dbHost=Homestead.yaml[id] 
 #                                dbConn=.env[dbName, dbUser, dbPassword] 
@@ -29,11 +29,12 @@ php artisan migrate # @homestead
 php artisan make:model Task #generate model via Eloquent aka. Laravel ORM
 
 
-: #follow the guide to create task's CRUD at /tasks
-: #break down above work via /breakdown-tasks
+: #follow the guide to create task's CRUD at /basic-tasks
+: #break down above work via /basic-tasks-breakdown
 
 php artisan make:auth #generate email+pass auth
 
+php artisan make:controller TaskController #controller for adv /tasks
 
 ```
 
