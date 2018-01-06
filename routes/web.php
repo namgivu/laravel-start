@@ -124,3 +124,9 @@ Route::delete('/basic-tasks-breakdown/{id}', function ($id) {
 //endregion /basic-tasks-breakdown handlers
 
 ////endregion Tasks
+
+
+//Adv Tasks
+Route::get   ('/tasks',       'TaskController@index');
+Route::post  ('/task',        'TaskController@store');
+Route::delete('/task/{task}', 'TaskController@destroy');
