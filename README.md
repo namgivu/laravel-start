@@ -38,6 +38,8 @@ php artisan make:controller TaskController #controller for adv /tasks
 
 ```
 
+- note
+  > all Laravel app folders are auto-loaded using the PSR-4 auto-loading standard,
 
 - often-used commands
 ```bash
