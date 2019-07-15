@@ -6,6 +6,5 @@ Homestead.json
 .env
 
 .idea/dictionaries/*
-.idea/deployment.xml
-.idea/php.xml
+.idea/*.xml
 .idea/laravel-start.iml
