@@ -28,6 +28,8 @@ chmod +x           /usr/local/bin/composer
 
 # install laravel 
 ```bash
+# requires php 7.3 installed to proceed
+
 apt install -y libapache2-mod-php7.3 php7.3-mbstring php7.3-xmlrpc php7.3-soap php7.3-gd php7.3-xml php7.3-cli php7.3-zip
 apt install -y unzip
 apt -y autoremove
@@ -87,7 +89,7 @@ ref. https://laravel.com/docs/5.2/quickstart
 
 create migration script
 ```bash
-php artisan make:migration create_tasks_table --create=tasks
+php artisan make:migration create_schema_w_seeding_0th --create=abbccc
 ```
 
 ```php
