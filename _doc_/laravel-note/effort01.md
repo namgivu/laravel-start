@@ -3,8 +3,11 @@ ref. https://laravel.com/docs/5.8
   
 php 7.3 and the composer ref. https://laravel.com/docs/5.8
 ```bash
+sudo su
+
 apt update 
 apt upgrade -y
+apt -y autoremove
 
 # install apache2
 apt install -y apache2
@@ -23,6 +26,7 @@ php -v # should print php version
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar   /usr/local/bin/composer
 chmod +x           /usr/local/bin/composer
+composer -V # should print composer version
 ```
 
 
@@ -30,8 +34,8 @@ chmod +x           /usr/local/bin/composer
 ```bash
 # requires php 7.3 installed to proceed
 
-apt install -y libapache2-mod-php7.3 php7.3-mbstring php7.3-xmlrpc php7.3-soap php7.3-gd php7.3-xml php7.3-cli php7.3-zip
-apt install -y unzip
+apt install -y libapache2-mod-php7.3 php7.3-mbstring php7.3-xmlrpc php7.3-soap php7.3-gd php7.3-xml php7.3-cli php7.3-zip unzip
+apt install -y php7.3-mysql
 apt -y autoremove
 
 composer global require laravel/installer
@@ -44,7 +48,7 @@ EOF
 
 # laravel blog app
 ```bash
-laravel -v
+laravel -V
 
 cd ~
     laravel new blog
@@ -77,10 +81,12 @@ curl -L "https://github.com/docker/compose/releases/download/$version/docker-com
 mv ./docker-compose /usr/bin/docker-compose; chmod +x /usr/bin/docker-compose
 ```
 
-run mariadb
+run mariadb aka mysql
+download folder at https://gist.github.com/namgivu/faad68e6163e0faf4d410fd8faab5865
+eg to folder ~/mysql-mariadb-docker
 ```bash
-./mysql-mariadb-docker/run.sh
-
+cd ~/mysql-mariadb-docker
+./start.sh
 ```
 
 # quick start laravel
@@ -92,6 +98,8 @@ create migration script
 php artisan make:migration create_schema_w_seeding_0th --create=abbccc
 ```
 
+
+TODO run sql script with laravel migration, how?
 ```php
 ref. https://stackoverflow.com/q/28787293/248616
 
