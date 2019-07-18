@@ -13,7 +13,7 @@ After run, we can
     docker exec -it  nn_mariadb  /bin/bash
 
     # open postgres client aka psql
-    docker exec -it  nn_mariadb  mysql -u root -p -h localhost -P 33066
+    docker exec -it  nn_mariadb  mysql -uroot -proot
 
 Done
 '
