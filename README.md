@@ -8,4 +8,7 @@ ref. https://laravel.com/docs/5.2/quickstart
 cd :THIS_PROJECT
 composer create-project laravel/laravel quickstart --prefer-dist  # should have :quickstart folder created aka the laravel skeleton app
 
-
+# create table :tasks migration
+cd quickstart
+    php artisan make:migration create_tasks_table --create=tasks; 
+cd -
