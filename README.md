@@ -4,6 +4,9 @@ ref. https://github.com/namgivu/laravel-start/blob/doc/_doc_/laravel-note/effort
 now learn the laravel quickstart
 ref. https://laravel.com/docs/5.2/quickstart
 
+on github
+ref. https://github.com/laravel/quickstart-basic
+
 # get mysql 3306 via docker
 ref. https://gist.githubusercontent.com/namgivu/faad68e6163e0faf4d410fd8faab5865/
 
@@ -58,3 +61,8 @@ dmysql -e 'SHOW TABLES'  # should see :tasks table in the list
 dmysql -e 'SHOW TABLES' | grep tasks
 
 cd -
+
+# create Eloquent model
+php artisan make:model Task  # model file be created at `app/Task.php`
+
+more detail on ref. https://github.com/laravel/quickstart-basic
