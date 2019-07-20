@@ -1,9 +1,2 @@
 vendor/
-
-.idea/laravel-sfs.iml
-.idea/modules.xml
-.idea/deployment.xml
-.idea/dataSources.xml
-.idea/php.xml
-.idea/dataSources/
-.idea/dictionaries/
+.idea/
