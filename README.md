@@ -11,4 +11,6 @@ composer create-project laravel/laravel quickstart --prefer-dist  # should have 
 # create table :tasks migration
 cd quickstart
     php artisan make:migration create_tasks_table --create=tasks; 
+    f=`find -name "*create*tasks*table*"`; ll $f
+    nano $f  # edit the file to add column :name $table->string('name');
 cd -
