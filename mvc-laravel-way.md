@@ -44,6 +44,21 @@ use/extend a template from a view
 @endsection
 ```
 
+# ORM class for a db table**
+
+## 00 `model class Product` vs. `table products`
+let's say we have table :products in mysql/mariadb database
+then we create the model class with below command - the model file will be created at `app/Product.php`
+`php artisan make:model Product` 
+
+## 01 `model class SanPham` vs. `table products`
+first call `php artisan make:model SanPham` 
+then edit `app/Product.php` to add to the class this field to map the table name to the class
+```
+protected $table = "products";
+```
+
+
 # model syntax note
 **create**
 $task = new Task;
