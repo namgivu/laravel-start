@@ -20,15 +20,21 @@ d=mysql-mariadb-docker; mkdir -p $d; cd $d
     ./start.sh
     
     docker exec -it  nn_mariadb  mysql --version  # should see version
+
 cd -
 
+create dmysql command
+echo "alias dmysql='docker exec -it  nn_mariadb  mysql -uroot -proot'" >> ~/.bashrc
+exec $SHELL
+
+
 # create database :quickstart
-alias dmysql='docker exec -it  nn_mariadb  mysql -uroot -proot'
 dmysql -e 'DROP DATABASE IF EXISTS quickstart;'
 dmysql -e 'CREATE DATABASE quickstart;'
 
 : optional view 
 dmysql -e 'SHOW DATABASES'
+dmysql -e 'SHOW DATABASES' | grep quickstart  # must see it
 dmysql quickstart -e 'SHOW TABLES'
 
 # generate app skeleton
