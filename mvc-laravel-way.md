@@ -9,8 +9,10 @@ MVC view    `resources/views/tasks.blade.php`
             all views defined under folder `resources/views/`
             path under `resources/views/vvv.blade.php` is default to route handler method to render view `return view('vvv');`
 
+
 # MVC controller & routes
-without controller
+
+## without controller
 sample map `/` to a handler in `quickstart/routes/web.php`
 ```
 Route::get('/', function () {
@@ -18,40 +20,47 @@ Route::get('/', function () {
 });
 ```
 
-with controller
+## with controller
 create the controller
 `php artisan make:controller TaskController`
+
 map endpoint to handlers with controller
 ```
-Route::get(     '/tasks',       'TaskController@index'   );
-Route::post(    '/task',        'TaskController@store'   );
-Route::delete(  '/task/{task}', 'TaskController@destroy' );
+Route::get(     '/tasks',        'TaskController@index'   );
+Route::post(    '/tasks',        'TaskController@store'   );
+Route::delete(  '/tasks/{task}', 'TaskController@destroy' );
 ```
 
+
 # view syntax note
-* define `master template` aka `layout`
-defined at file `resources/views/layouts/MMM.blade.php` - MMM aka master-template-MMM
+* `master template` aka `layout` defined at file `resources/views/layouts/MM.blade.php` - MM aka master-template
 within the template, render the child/inheritor by 
-`@yield('content')`
+```
+@yield('content')
+```
 
 
 use/extend a template from a view
 ```
-@extends('layouts.MMM')
+@extends('layouts.MM')
 
 @section('content')
 <!--child's content goes here-->
 @endsection
 ```
 
+
 # ORM class for a db table**
 
-## 00 `model class Product` vs. `table products`
+## 00 `table products` mapped as `model class Product` 
 let's say we have table :products in mysql/mariadb database
 then we create the model class with below command - the model file will be created at `app/Product.php`
-`php artisan make:model Product` 
+```
+php artisan make:model Product
+```
 
-## 01 `model class SanPham` vs. `table products`
+
+## 01 `table products` mapped as `model class SanPham` 
 first call `php artisan make:model SanPham` 
 then edit `app/Product.php` to add to the class this field to map the table name to the class
 ```

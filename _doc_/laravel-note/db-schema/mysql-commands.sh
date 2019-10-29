@@ -14,7 +14,7 @@ docker exec -it nn_mariadb  mysql -u $u     -e "DROP DATABASE IF EXISTS $db;"
 docker exec -it nn_mariadb  mysql -u $u     -e "CREATE DATABASE $db;"
 
 # query
-docker exec -it nn_mariadb  mysql -u $u $db -e 'select 1'
+              docker exec -it nn_mariadb  mysql -u $u $db -e 'select 1'
 s='select 1'; docker exec -it nn_mariadb  mysql -u $u $db -e "$sql"
 
 alias mysql='docker exec -it nn_mariadb  mysql'
