@@ -32,7 +32,7 @@ Route::delete(  '/tasks/{task}', 'TaskController@destroy' );
 ```
 
 
-# view syntax note
+# MVC view syntax note
 * `master template` aka `layout` defined at file `resources/views/layouts/MM.blade.php` - MM aka master-template
 within the template, render the child/inheritor by 
 ```
@@ -68,7 +68,7 @@ protected $table = "products";
 ```
 
 
-# model syntax note
+# MVC model syntax note
 **create**
 $task = new Task;
 $task->name = $request->name;
