@@ -73,5 +73,6 @@ php artisan make:model Task  # model file be created at `app/Task.php`
 
 # run app
 php artisan serve
+php artisan serve --host 0.0.0.0 --port 9000
 
 more detail on ref. https://github.com/laravel/quickstart-basic
