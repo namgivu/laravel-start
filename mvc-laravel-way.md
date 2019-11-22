@@ -8,6 +8,9 @@ MVC model   `app/Task.php`
 MVC view    `resources/views/tasks.blade.php`
             all views defined under folder `resources/views/`
             path under `resources/views/vvv.blade.php` is default to route handler method to render view `return view('vvv');`
+            
+MVC controller  `quickstart/app/Http/Controllers/TaskController.php`
+                create the controller `php artisan make:controller TaskController`
 
 
 # MVC controller & routes
@@ -21,8 +24,7 @@ Route::get('/', function () {
 ```
 
 ## with controller
-create the controller
-`php artisan make:controller TaskController`
+create the controller `php artisan make:controller TaskController`
 
 map endpoint to handlers with controller
 ```
@@ -37,6 +39,7 @@ Route::delete(  '/tasks/{task}', 'TaskController@destroy' );
 within the template, render the child/inheritor by 
 ```
 @yield('content')
+@yield('content2')
 ```
 
 
@@ -46,6 +49,10 @@ use/extend a template from a view
 
 @section('content')
 <!--child's content goes here-->
+@endsection
+
+@section('content2')
+<!--child's content 2 goes here-->
 @endsection
 ```
 
