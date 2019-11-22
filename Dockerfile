@@ -41,7 +41,7 @@ RUN echo 191122_x
 #COPY . .
 
 # copy .env used for dockerized mode - NOTE this .env is in folder bin/docker/ and to link the api container with the postgres container
-COPY ./docker/.env .
+COPY ./docker/.env /app/quickstart
 
 # for documentation on port
 EXPOSE 8000
