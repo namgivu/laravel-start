@@ -59,7 +59,7 @@ use/extend a template from a view
 
 # ORM class for a db table**
 
-## 00 `table products` mapped as `model class Product` 
+## 00 `table tasks` mapped as `model class Task` 
 let's say we have table :products in mysql/mariadb database
 then we create the model class with below command - the model file will be created at `app/Product.php`
 ```
@@ -71,7 +71,7 @@ php artisan make:model Product
 first call `php artisan make:model SanPham` 
 then edit `app/Product.php` to add to the class this field to map the table name to the class
 ```
-protected $table = "products";
+protected $table = "tasks";
 ```
 
 
@@ -84,7 +84,7 @@ $task->save();
 **read**
 load the model
 $tasks = Task::orderBy('created_at', 'asc')->get();
-$tasks = Task->get();
+$tasks = Task::get();
 
 pass model $tasks to the view
 ```
@@ -95,7 +95,7 @@ return view('tasks', [
 
 that model $tasks in Blade view 
 ```
-@foreach ($tasks as $task)
-    <div>{{ $task->name }}</div>
+@foreach ($tasks as $t)
+    <div>{{ $t->name }}</div>
 @endforeach
 ```

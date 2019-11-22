@@ -1,9 +1,12 @@
+CAUTION This guide is obsolete - please go for ./effort01.md
+
 # get started on ubuntu 16
 ref. https://www.rosehosting.com/blog/install-laravel-on-ubuntu-16-04/
 
 get php, composer and laravel binaries ready
 ```bash
-sudo apt install software-properties-common
+sudo apt update
+sudo apt install -y software-properties-common
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt update
 sudo apt upgrade -y
