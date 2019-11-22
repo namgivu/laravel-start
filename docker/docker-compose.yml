@@ -8,7 +8,7 @@ services:
     image: bitnami/mariadb:10.3
     ports:
       - 18110:3306
-    container_name: nn_mariadb
+    container_name: thangtm58_lavarel_start_pg
     volumes:
       # ref. https://hub.docker.com/r/bitnami/mariadb/#persisting-your-database
       # - /path/to/mariadb-persistence:/bitnami/mariadb
@@ -17,6 +17,14 @@ services:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       # - ALLOW_EMPTY_PASSWORD=yes
       - MARIADB_ROOT_PASSWORD=root
+    restart: always
+
+  web:
+    image: thangtm58/lavarel_start
+    ports:
+      - 18111:8000
+    container_name: thangtm58_lavarel_start
+
     restart: always
 
 volumes:
